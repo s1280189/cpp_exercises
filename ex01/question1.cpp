@@ -5,10 +5,10 @@ int parity(unsigned long x){
   while(x!=0){
     if(x%2==1){
       count++;
-      x=(x-(x%2))/2;
+      x=(x)/2;
     }
     else if(x%2==0){
-      x=(x-(x%2))/2;
+      x=(x)/2;
     }
   }
 
