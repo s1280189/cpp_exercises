@@ -18,12 +18,13 @@ bool Stack::full(){
 }
 
 int Stack::size(){
-  return _top + 1;
+  return top+2;
 }
 
 void Stack::push(Stack::Point point){
   if(Stack::full() != true){
     _data[_top+1]=point;
+    top++;
   }
   else
     std::cerr << "stack is full!" <<std::endl;
@@ -31,15 +32,13 @@ void Stack::push(Stack::Point point){
 
 void Stack::pop(){
   if(Stack::empty()!= true){
-    delete[_top] _data;
+    
+    top--;
   }
   else
     std::cerr << "stack is empty!"<<std::endl;
 }
 
 Stack::Point top(){
-  Point p;
-  p.x= _data[_top].x;
-  p.y = _data[_top].y;
-  return p;
+  return _data[_top];
 }
