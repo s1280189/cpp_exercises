@@ -18,7 +18,7 @@ bool Stack::full(){
 }
 
 int Stack::size(){
-  return top+2;
+  return top+1;
 }
 
 void Stack::push(Stack::Point point){
