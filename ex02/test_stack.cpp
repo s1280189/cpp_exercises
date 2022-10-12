@@ -11,7 +11,7 @@ int main(){
   std::cout<<(Stack::empty())<<std::endl;
 
   
-  Stack::Point point;
+  Point point;
   point.x=1;
   point.y=1;
   Stack::push(point);
