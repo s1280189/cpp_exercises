@@ -16,7 +16,8 @@ int main(){
   point.y=1;
   Stack::push(point);
   std::cout<<(Stack::empty())<<std::endl;
-  std::cout<<(Stack::top())<<std::endl;
+  point=top();
+  printf("%d, %d\n",point.x,point.y);
   Stack::pop();
 
   
@@ -42,8 +43,12 @@ int main(){
   for(i=0;i<_max_size;i++){
     Stack::push(point);
   }
+
+  std::cout<<(size())<<std::endl;
+  std::cout<<(full())<<std::endl;
   Stack::push(point);
-  std::cout<<(Stack::size())<<std::endl;
+  std::cout<<full()<<std::endl;
+  Stack::push(point);
   return 0;
 }
 
