@@ -2,7 +2,7 @@
 
 int main(){
   //1~4
-  std::cout<<"//1~4" <<std::endl;
+  std::cout<<"*****//1~4*****" <<std::endl;
   float* f;
   float pi=3.14159f;
   f=&pi;
@@ -11,7 +11,7 @@ int main(){
 
 
   //5~9
-  std::cout<<"//5~9"<<std::endl;
+  std::cout<<"*****//5~9*****"<<std::endl;
   int* ip;
   int a[5]={0,1,2,3,4};
   ip=a;
@@ -24,9 +24,10 @@ int main(){
   std::cout<<"content of a[0]:" << a[4]<<std::endl;
   std::cout<<"Point out ip points to:" << *ip << std::endl;
 
+
   
   //10~13
-  std::cout<< "//10~13" << std::endl;
+  std::cout<< "*****//10~13*****" << std::endl;
   double* d;
   int n=10;
   d= new double[n];
@@ -38,8 +39,9 @@ int main(){
   }
   delete[] d;
 
+
   //14~16
-  std::cout<<"//14~16"<<std::endl;
+  std::cout<<"*****//14~16*****"<<std::endl;
   int m=5;
   n=10;
   int j;
@@ -48,7 +50,7 @@ int main(){
   for(i=0;i<n;++i) dd[i] = new double[m];
 
   for(i=0;i<n;i++){
-    std::cout<<"If i="<< i << std::endl;
+    std::cout<<"------If i="<< i << "------"<< std::endl;
     for(j=0;j<m;j++){
       dd[i][j]=double(i)*double(j);
       std::cout<< dd[i][j] << std::endl;
@@ -57,12 +59,15 @@ int main(){
   for(i=0;i<n;++i) delete[] dd[i];
   delete[] dd;
 
+
+
   //17~19
-  std::cout<<"//17~19"<<std::endl;
+  std::cout<<"*****//17~19*****"<<std::endl;
   float& rf = *f;
   rf = 2.71828;
   std::cout<<"Value rf:"<< rf <<std::endl;
   std::cout<<"Value f:" << *f <<std::endl;
+
 
   return 0;
 }
