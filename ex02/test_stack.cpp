@@ -6,17 +6,17 @@
 int main(){
   //COMPLETE
   //Write tests for testing your stack implementetaion
-  Stack stack;
+  Stack stack(100);
   stack.pop();
-  std::cout<<(stack.size())<<std::endl;
-  std::cout<<(stackempty())<<std::endl;
+  std::cout<<(Stack::size())<<std::endl;
+  std::cout<<(Stack::empty())<<std::endl;
 
   
   Point point;
   point.x=1;
   point.y=1;
-  stack.(point);
-  std::cout<<(stack.empty())<<std::endl;
+  Stack::push(point);
+  std::cout<<(Stack::empty())<<std::endl;
   point=top();
   printf("%d, %d\n",point.x,point.y);
   stack.pop();
@@ -24,14 +24,14 @@ int main(){
   
   point.x=1;
   point.y=2;
-  stack.push(point);
+  Stack::push(point);
 
   point.x=3;
   point.y=3;
-  stack.push(point);
-  stack.push(point);
-  stack.push(point);
-  std::cout<<(stack.size())<<std::endl;
+  Stack::push(point);
+  Stack::push(point);
+  Stack::push(point);
+  std::cout<<(Stack::size())<<std::endl;
 
   stack.pop();
   stack.pop();
@@ -42,14 +42,14 @@ int main(){
   point.x=4;
   point.y=4;
   for(i=0;i<_max_size;i++){
-    stack.push(point);
+    Stack::push(point);
   }
 
-  std::cout<<(size())<<std::endl;
-  std::cout<<(full())<<std::endl;
-  stack.push(point);
-  std::cout<<full()<<std::endl;
-  stack.push(point);
+  std::cout<<(Stack::size())<<std::endl;
+  std::cout<<(Stack::full())<<std::endl;
+  Stack::push(point);
+  std::cout<<Stack::full()<<std::endl;
+  Stack::push(point);
   return 0;
 }
 
