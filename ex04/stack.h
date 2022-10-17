@@ -17,17 +17,17 @@ class Stack {
   ~Stack(){ delete[] _data};
 
 
-  bool empty();
+  bool empty() const;
 
-  bool full();
+  bool full() const;
 
-  int size();
+  int size() const;
 
-  void push(Point);
+  void push(const Point);
 
   void pop();
 
-  Point top();
+  Point top() const;
 
  private:
   int _max_size;
