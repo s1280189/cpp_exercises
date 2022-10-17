@@ -28,7 +28,7 @@ int Stack::size() const{
 void Stack::push(const Point& point){
   if(Stack::full() != true){
     _data[_top+1]=point;
-    top++;
+    _top++;
   }
   else
     std::cerr << "stack is full!" <<std::endl;
