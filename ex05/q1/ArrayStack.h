@@ -23,7 +23,7 @@ class ArrayStack{
       temp[i] = _items[i];
     }
     delete[] _items;
-    _items_ = temp;
+    _items = temp;
   }
 
   public:
@@ -32,26 +32,27 @@ class ArrayStack{
 
  ArrayStack()
    {
-     _num_items=0,
-       _allocated_size=1,
-       _items=nullptr;
+     _num_items=0;
+     _allocated_size=0;
+     _items=nullptr;
    }
 
   explicit ArrayStack(int allocated_size)
   {
+    _allocated_size = allocated_size;
     _num_items = 0;
-    _items = new string[allocated_size];
+    _items = new std::string[allocated_size];
   }
 
   //Destructor:
   ~ArrayStack(){
-    delete _items;
+    delete[] _items;
   }
 
   //Push item to the stack
-  void push(const std::string& item){
+  void push(const std::string& _item){
     if(_num_items == _allocated_size) resize(2*_allocated_size);
-    _items[_num_items++]= item;
+    _items[_num_items++]= _item;
   }
 
   //Pop item
