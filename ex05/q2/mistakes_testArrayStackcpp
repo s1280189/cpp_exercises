@@ -1,8 +1,0 @@
-test_ArrayStack.cpp:25:12: error: invalid operands to binary expression ('ArrayStack' and 'ArrayStack')
-  if(stack5==stack1){
-     ~~~~~~^ ~~~~~~
-test_ArrayStack.cpp:44:18: error: reference to type 'const std::string' (aka 'const basic_string<char>') could not bind to an lvalue of type 'int'
-     stack6.push(i);
-                 ^
-./ArrayStack.h:77:32: note: passing argument to parameter 'item' here
-  void push(const std::string& item){
