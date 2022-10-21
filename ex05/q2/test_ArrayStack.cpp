@@ -22,15 +22,14 @@ int main(){
 
 
   printf("if stack5 & stack1 are identical ->");
-  if(stack5==stack1){
-    printf("TRUE\n");
-  }
   
   for(int i=0;i<stack1.size();i++){
-    std::cout<<"stack3 =:" << stack3.top()
-	     << "stack1=:" << stack1.top() << std::endl;
-    stack3.pop();
+    std::cout<<"stack1 =:" << stack1.top()
+	     <<"stack3 =:" << stack3.top()
+	     <<"stack5 =:" << stack5.top()  << std::endl;
     stack1.pop();
+    stack3.pop();
+    stack5.pop();
   }
 
    for(int i=0;i<stack2.size();i++){
@@ -40,9 +39,11 @@ int main(){
     stack2.pop();
   }
 
-   for(int i=0;i<10;i++){
-     stack6.push(i);
-   }
+   stack6.push(1);
+   stack6.push(2);
+   stack6.push(3);
+   stack6.push(4);
+   stack6.push(5);
 
 
   return 0;
