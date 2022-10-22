@@ -72,31 +72,34 @@ class ArrayStack{
 
   //Move Constructor
   ArrayStack(ArrayStack&& o){
-    _items = new std::string[o._sllocated_size];
+    _items = new std::string[o._allocated_size];
     _num_items= o._num_items;
     _allocated_size = o._allocated_size;
     *_items = *o._items;
 
     for(int i=0;i<o._allocated_size; i++){
       _items[i]=o._items[i];
-      o._items[i]=nulptr;
+      o._items[i]=nullptr;
     }
     o._num_items=0;
-    o._allocated_size=0
+    o._allocated_size=0;
   }
 
+  
+  //Move assignement
   ArrayStack& operator=(ArrayStack&& o){
-    _items = new std::string[o._sllocated_size];
+    _items = new std::string[o._allocated_size];
     _num_items= o._num_items;
     _allocated_size = o._allocated_size;
     *_items = *o._items;
 
     for(int i=0;i<o._allocated_size; i++){
       _items[i]=o._items[i];
-      o._items[i]=nulptr;
+      o._items[i]=nullptr;
     }
     o._num_items=0;
-    o._allocated_size=0
+    o._allocated_size=0;
+    return *this;
   }
 
     
