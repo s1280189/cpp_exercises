@@ -32,7 +32,7 @@ int main(){
     stack6 = std::move(stack2);
 
     max=stack7.size();
-    for(int i=0;i<max;i++){
+    for(int i=0;i<=max;i++){
       std::cout<<"stack7 =:"<< stack7.top()<<std::endl;
       std::cout<<"stack5 =:"<< stack5.top()<<std::endl;
       stack5.pop();
@@ -44,7 +44,7 @@ int main(){
     
 
     max=stack6.size;
-    for(int i=0;i<max;i++){
+    for(int i=0;i<=max;i++){
       std::cout<<"stack6 =:"<< stack6.top()<<std::endl;
       std::cout<<"stack2 =:"<< stack2.top()<<std::endl;
       stack6.pop();
