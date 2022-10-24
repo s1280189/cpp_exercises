@@ -1,6 +1,4 @@
 #include "shape.h"
-#include <iostream>
-#include <string>
 
 #ifdef RECTANGLE_H
 #define RECTANGLE_H
@@ -39,13 +37,13 @@ class Rectangle : public Shape{
     delete height;
   }
 
-  std::string Shape::getname() const;
+  virtual std::string getname() const;
 
-  float Shape::compute_area() const;
-  Shape* Shape::create() const;
-  Shape* Shape::clone() const;
+  virtual float compute_area() const;
+  virtual Shape* create() const;
+  virtual Shape* clone() const;
 
-  ~Shape();
+  virtual ~Shape();
 
 
 #endif
