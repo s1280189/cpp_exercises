@@ -6,16 +6,16 @@
 
 class Shape{
  public:
-  virtual std::string get_name() const{};
+  virtual std::string get_name() const=0;
 
-  virtual float compute_area() const{};
+  virtual float compute_area() const=0;
 
   
-  virtual Shape* create() const{};
+  virtual Shape* create() const=0;
 
-  virtual Shape* clone() const{};
+  virtual Shape* clone() const=0;
 
-  virtual ~Shape() {};
+  virtual ~Shape() =0;
 
 }
 
