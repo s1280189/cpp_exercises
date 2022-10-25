@@ -22,7 +22,7 @@ class Rectangle : public Shape{
 
   Rectangle(Point p1, float p1_width, float p1_height);
 
-  virtual std::string getname() const;
+  virtual std::string get_name() const;
 
   virtual float compute_area() const;
   virtual Shape* create() const;
