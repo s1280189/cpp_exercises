@@ -35,4 +35,4 @@ virtual Rectangle* Rectangle::clone() const{
   return new Rectangle(*this);
 }
 
-virtual ~Rectangle();
+virtual ~Rectangle(){};
