@@ -31,6 +31,6 @@ class Rectangle : public Shape{
   virtual Rectangle* clone() const;
 
   virtual ~Rectangle(){};
-
+};
 
 #endif
