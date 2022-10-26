@@ -13,6 +13,12 @@ Rectangle::Rectangle(Point p1, float p1_width, float p1_height){
    height = p1_height;
 };
 
+Rectangle::Ractangle(const Rectangle& rec1){
+  left_corner=rec1.left_corner;
+  width= rec1.width;
+  height=rec1.height;
+};
+
 virtual std::string Ractangle::get_name() const{
   return "Restangle";
 }
