@@ -1,4 +1,4 @@
-#include "rectangle.h"
+#include<rectangle.h>
 
 Rectangle::Rectangle(){
   left_corner.x=0;
@@ -21,12 +21,12 @@ virtual float Rectangle::compute_area() const{
   return width*height;
 }
 
-virtual Shape* Rectangle::create() const {
+virtual Rectangle* Rectangle::create() const {
   return new Rectangle();
 }
 
-virtual Shape* Rectangle::clone() const{
-  return new Rectangle();
+virtual Rectangle* Rectangle::clone() const{
+  return new Rectangle(*this);
 }
 
-virtual ~Shape();
+virtual ~Rectangle();
