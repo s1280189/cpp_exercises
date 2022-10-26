@@ -33,4 +33,4 @@ virtual Disk* Disk::clone() const{
   return new Disk(*this);
 }
 
-virtual ~Disk();
+virtual ~Disk(){};
