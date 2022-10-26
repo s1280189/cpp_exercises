@@ -1,4 +1,5 @@
 #include "shape.h"
+#include <iostream>
 
 #ifdef DISK_H
 #define DISK_H
@@ -14,17 +15,19 @@ class Disk: public Shape{
   float radius;
 
  public:
-
   Disk();
   Disk(Point center, float radius);
+  Disk(const Disk& disk1);
 
   virtual std::string get_name();
   virtual float compute_area() const;
-  virtual Shape* create() const;
-  virtual Shape* clone() const;
+  virtual Disk* create() const;
+  virtual Disk* clone() const;
 
-  virtual ~Shape();
-};
+  vitual ~Disk(){};
+
+
+}
+
 
 #endif
-  
