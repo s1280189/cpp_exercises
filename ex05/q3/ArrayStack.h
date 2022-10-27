@@ -41,16 +41,17 @@ class ArrayStack{
   explicit ArrayStack(int allocated_size)
   {
     _num_items = 0;
+    _allocated_size=allocated_size;
     _items = new std::string[allocated_size];
   }
 
 
   ArrayStack(const ArrayStack& another_stack){
+    delete[] _items;
     _items = new std::string[another_stack._allocated_size];
     
     _num_items = another_stack._num_items;
     _allocated_size = another_stack._allocated_size;
-    *_items = *another_stack._items;
     
     for(int i=0;i<another_stack._allocated_size; i++){
       _items[i]= another_stack._items[i];
@@ -58,6 +59,7 @@ class ArrayStack{
   }
 
   ArrayStack& operator=(const ArrayStack& op2){
+    delete[] _items;
     _items = new std::string[op2._allocated_size];
     _num_items = op2._num_items;
     _allocated_size = op2._allocated_size;
@@ -72,15 +74,12 @@ class ArrayStack{
 
   //Move Constructor
   ArrayStack(ArrayStack&& o){
+    delete[] _items;
     _items = new std::string[o._allocated_size];
     _num_items= o._num_items;
     _allocated_size = o._allocated_size;
     *_items = *o._items;
-
-    for(int i=0;i<o._allocated_size; i++){
-      _items[i]=o._items[i];
-      o._items[i]=nullptr;
-    }
+    o.*_items=nullptr;
     o._num_items=0;
     o._allocated_size=0;
   }
@@ -88,15 +87,12 @@ class ArrayStack{
   
   //Move assignement
   ArrayStack& operator=(ArrayStack&& o){
+    delete[] items;
     _items = new std::string[o._allocated_size];
     _num_items= o._num_items;
     _allocated_size = o._allocated_size;
     *_items = *o._items;
-
-    for(int i=0;i<o._allocated_size; i++){
-      _items[i]=o._items[i];
-      o._items[i]=nullptr;
-    }
+    o.*_items=nullptr;
     o._num_items=0;
     o._allocated_size=0;
     return *this;
