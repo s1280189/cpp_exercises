@@ -3,6 +3,10 @@
 #ifdef SHAPE_H
 #define SHAPE_H
 
+struct Point{
+  float x;
+  float y;
+};
 
 class Shape{
  public:
