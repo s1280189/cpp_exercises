@@ -43,7 +43,9 @@ public:
 
  // Acces the topmost element
  // (the implementation will go in stack.cpp)
- Point top();
+  Point top(){
+    return _data[_top];
+  };
 
 private:
   int _max_size; // capacity of the fixed-size stack 

@@ -42,7 +42,3 @@ void Stack::pop(){
   else
     std::cerr << "stack is empty!"<<std::endl;
 }
-
-Point top(){
-  return _data[_top];
-}
