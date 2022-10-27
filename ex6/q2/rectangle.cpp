@@ -1,4 +1,4 @@
-#include<rectangle.h>
+#include"rectangle.h"
 
 Rectangle::Rectangle(){
   left_corner.x=0;
@@ -19,20 +19,20 @@ Rectangle::Ractangle(const Rectangle& rec1){
   height=rec1.height;
 };
 
-virtual std::string Ractangle::get_name() const{
+std::string Ractangle::get_name() const{
   return "Restangle";
 }
 
-virtual float Rectangle::compute_area() const{
+float Rectangle::compute_area() const{
   return width*height;
 }
 
-virtual Rectangle* Rectangle::create() const {
+Rectangle* Rectangle::create() const {
   return new Rectangle();
 }
 
-virtual Rectangle* Rectangle::clone() const{
+Rectangle* Rectangle::clone() const{
   return new Rectangle(*this);
 }
 
-virtual ~Rectangle(){};
+Rectangle::~Rectangle(){};
