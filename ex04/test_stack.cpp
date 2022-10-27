@@ -41,7 +41,7 @@ int main(){
   int i;
   point.x=4;
   point.y=4;
-  for(i=0;i<_max_size;i++){
+  for(i=0;i<100;i++){
     stack.push(point);
   }
 

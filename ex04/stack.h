@@ -1,3 +1,4 @@
+
 #ifndef STACK_H
 #define STACK_H
 #include <stdio.h>
@@ -27,7 +28,7 @@ class Stack {
 
   void pop();
 
-  Point top() const;
+  Point top() const { return _data[_top];};
 
  private:
   int _max_size;
