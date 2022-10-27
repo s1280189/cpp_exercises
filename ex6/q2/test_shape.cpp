@@ -1,14 +1,10 @@
-#include "rectangle.cpp"
-#include "disk.cpp"
-
-struct Point{
-  float x;
-  float y;
-};
+#include "rectangle.h"
+#include "disk.h"
+#include "shape.h"
 
 
 int main(){
-  Point p1;
+  struct Point p1;
   p1.x=2;
   p1.y=2;
   
@@ -25,12 +21,12 @@ int main(){
   std::cout<<"rectangle2 -> rectangle1's clone"<<std::endl;
   std::cout<< "rectangle2 check get_name ->" << rec2.get_name() <<std::endl;
   std::cout<<"recatngle2 check compute_area()->"
-	   <<rec2.compute_area()<<std::endl;
+       <<rec2.compute_area()<<std::endl;
 
   std::cout<<"rectangle3 check get_name->"
-	   << rec3.get_name() << std::endl;
+       << rec3.get_name() << std::endl;
   std::cout<<"recatnagle3 check compute_area()"
-	   <<rec3.compute_area()<<std::endl;
+       <<rec3.compute_area()<<std::endl;
   
 
 
