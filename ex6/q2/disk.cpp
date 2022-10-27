@@ -17,20 +17,20 @@ Disk::Disk(const Disk& disk1){
   radius=disk1.radius;
 }
 
-virtual std::string Disk::get_name() const{
+std::string Disk::get_name() const{
   return "Circle";
 }
 
-virtual float Disk::compute_area() const{
+float Disk::compute_area() const{
   return radius*radius*PI;
 }
 
-virtual Disk* Disk::create() const{
+Disk* Disk::create() const{
   return new Disk();
 }
 
-virtual Disk* Disk::clone() const{
+Disk* Disk::clone() const{
   return new Disk(*this);
 }
 
-virtual ~Disk(){};
+Disk::~Disk(){};
