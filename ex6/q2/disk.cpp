@@ -13,6 +13,11 @@ Disk::Disk(Point cent1, float rad1){
   radius=rad1;
 }
 
+Disk::Disk(const Disk& disk1){
+  center=disk1.center;
+  radius=disk1.radius;
+}
+
 std::string Disk::get_name() const{
   return "Circle";
 }
@@ -26,7 +31,7 @@ Disk* Disk::create() const{
 }
 
 Disk* Disk::clone() const{
-  return new Disk();
+  return new Disk(*this);
 }
 
 Disk::~Disk();
