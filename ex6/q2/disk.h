@@ -4,10 +4,7 @@
 #ifdef DISK_H
 #define DISK_H
 
-struct Point{
-  float x;
-  float y;
-};
+
 
 class Disk: public Shape{
  private:
@@ -27,7 +24,7 @@ class Disk: public Shape{
   vitual ~Disk(){};
 
 
-}
+};
 
 
 #endif
