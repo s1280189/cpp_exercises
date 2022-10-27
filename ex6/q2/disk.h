@@ -16,15 +16,13 @@ class Disk: public Shape{
   Disk(Point center, float radius);
   Disk(const Disk& disk1);
 
-  virtual std::string get_name();
+  virtual std::string get_name() const;
   virtual float compute_area() const;
   virtual Disk* create() const;
   virtual Disk* clone() const;
 
-  vitual ~Disk(){};
+  virtual ~Disk();
 
 
 };
-
-
-#endif
+  

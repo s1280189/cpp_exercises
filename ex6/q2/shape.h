@@ -1,6 +1,6 @@
 #include<string>
 #include<iostream>
-#ifdef SHAPE_H
+#ifndef SHAPE_H
 #define SHAPE_H
 
 struct Point{
@@ -21,6 +21,6 @@ class Shape{
 
   virtual ~Shape() {};
 
-}
+};
 
 #endif
