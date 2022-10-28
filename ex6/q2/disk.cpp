@@ -34,4 +34,4 @@ Disk* Disk::clone() const{
   return new Disk(*this);
 }
 
-Disk::~Disk(){};
+Disk::~Disk(){}
