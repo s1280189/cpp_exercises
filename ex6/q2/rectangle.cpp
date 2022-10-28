@@ -35,4 +35,4 @@ Rectangle* Rectangle::clone() const{
   return new Rectangle(*this);
 }
 
-Rectangle::~Rectangle(){};
+Rectangle::~Rectangle(){}
