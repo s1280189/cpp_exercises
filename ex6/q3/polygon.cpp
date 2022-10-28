@@ -37,7 +37,7 @@ Polygon* Polygon::clone() const{
   return new Polygon(*this);
 }
 
-Polygon::~Polygon(){};
+Polygon::~Polygon(){}
 
 
 
