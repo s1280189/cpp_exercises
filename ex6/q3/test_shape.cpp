@@ -27,11 +27,11 @@ int main(){
   p1.y=5;
   
   Polygon po1(p1, 5);
-  Polygon* p2;
-  Polygon* p3;
+  Polygon* pol2;
+  Polygon* pol3;
 
-  pol2=p1.clone();
-  pol3=p1.create();
+  pol2=pol1.clone();
+  pol3=pol1.create();
 
   std::cout<< pol1.get_name() << std::endl;
   std::cout<< "polygon1 are:"<<pol1.compute_area() <<std::endl;
