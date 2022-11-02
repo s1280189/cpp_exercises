@@ -97,8 +97,27 @@ Mat2x2 operator- (){
   return result;
 }
 
-bool operator==(const Mat2x2& b){
-};
+bool operator==(const Mat2x2& a, const Mat2x2& b){
+  for(int i=0;i<2;i++){
+    for(int j=0;j<2;j++){
+      if(((a.mat2x2[i][j] - b.mat2x2[i][j])>1e-6)
+	 ||((b.mat2x2[i][j] - a.mat2x2[i][j])>1e-6)){
+	return 0;
+	break;
+      }
+    }
+  }
+
+  return 1;
+}
 
 ostream& operator<<(ostream& os, const Mat2x2& b){
-};
+  for(int i=0;i<2;i++){
+    for(int j=0;j<2;j++){
+      os<< b.mat2x2[i][j]<<" ";
+    }
+    os << endl;
+  }
+
+  return os;
+}
