@@ -5,6 +5,10 @@
 #include<iostream>
 #include<stdexcept>
 
+class Exception: public std::runtime_error{
+ public: Exception() :  std::runtime_error("error:Stack is empty"){};
+};
+
 class ArrayStack{
  private:
   int _num_items; //number of items in the stack
@@ -40,15 +44,13 @@ class ArrayStack{
 
   explicit ArrayStack(int allocated_size)
   {
-   delete[] _items;
     _num_items = 0;
-   _allocated_size=allocated_size;
     _items = new std::string[allocated_size];
   }
 
   //Destructor:
   ~ArrayStack(){
-    delete _items;
+    delete[] _items;
   }
 
   //Push item to the stack
@@ -79,10 +81,7 @@ class ArrayStack{
 
 };
 
-class Exception: public std::runtime_error{
- public:
- Exception() : std::runtime_error("error:Stack is empty"){};
-};
+
 
 #endif // ARRAY_STACK_H
       
