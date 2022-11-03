@@ -112,12 +112,9 @@ bool operator==(const Mat2x2& a, const Mat2x2& b){
 }
 
 ostream& operator<<(ostream& os, const Mat2x2& b){
-  for(int i=0;i<2;i++){
-    for(int j=0;j<2;j++){
-      os<< b.mat2x2[i][j]<<" ";
-    }
-    os << endl;
-  }
+ std::ostringstream s;
+	s << '(' << b.mat2x2[0][0] << ',' << b.mat2x2[0][1] << ','
+		<< b.mat2x2[1][0] << ',' << b.mat2x2[1][1] << ')';
 
-  return os;
+  return os<<s.str();
 }
