@@ -23,14 +23,14 @@ int main(){
   std::cout<< "recatngle1 area ->" << rec1.compute_area() <<std::endl;
 
   std::cout<<"rectangle2 -> rectangle1's clone"<<std::endl;
-  std::cout<< "rectangle2 check get_name ->" << rec2.get_name() <<std::endl;
+  std::cout<< "rectangle2 check get_name ->" << rec2->get_name() <<std::endl;
   std::cout<<"recatngle2 check compute_area()->"
-	   <<rec2.compute_area()<<std::endl;
+	   <<rec2->compute_area()<<std::endl;
 
   std::cout<<"rectangle3 check get_name->"
-	   << rec3.get_name() << std::endl;
+	   << rec3->get_name() << std::endl;
   std::cout<<"recatnagle3 check compute_area()"
-	   <<rec3.compute_area()<<std::endl;
+	   <<rec3->compute_area()<<std::endl;
   
 
 
@@ -45,15 +45,15 @@ int main(){
   std::cout<< "disk1 area ->" << disk1.compute_area() <<std::endl;
 
   std::cout<<"disk2 -> disk1's clone"<<std::endl;
-  std::cout<< "disk2 check get_name ->" << disk2.get_name() <<std::endl;
+  std::cout<< "disk2 check get_name ->" << disk2->get_name() <<std::endl;
   std::cout<<"disk2 check compute_area()->"
-           <<disk2.compute_area()<<std::endl;
+           <<disk2->compute_area()<<std::endl;
 
   std::cout<<"disk3 -> new create disk1"<<std::endl;
   std::cout<<"disk3 check get_name->"
-           << disk3.get_name() << std::endl;
+           << disk3->get_name() << std::endl;
   std::cout<<"recatnagle3 check compute_area()"
-           <<disk3.compute_area()<<std::endl;
+           <<disk3->compute_area()<<std::endl;
 
 
   return 0;
