@@ -1,6 +1,6 @@
-#include "rectangle.cpp"
-#include "disk.cpp"
-#include "polygon.cpp"
+#include "rectangle.h"
+#include "disk.h"
+#include "polygon.h"
 
 struct Point{
   float x;
@@ -11,20 +11,20 @@ struct Point{
 int main(){
   int n=5;
   Polygon p1[5];
-  p1.x=1;
-  p1.y=1;
+  p1[0].x=1;
+  p1[0].y=1;
 
-  p1.x=2;
-  p1.y=2;
+  p1[1].x=2;
+  p1[1].y=2;
 
-  p1.x=3;
-  p1.y=3;
+  p1[2].x=3;
+  p1[2].y=3;
 
-  p1.x=4;
-  p1.y=4;
+  p1[3].x=4;
+  p1[3].y=4;
 
-  p1.x=5;
-  p1.y=5;
+  p1[4].x=5;
+  p1[4].y=5;
   
   Polygon po1(p1, 5);
   Polygon* pol2;
