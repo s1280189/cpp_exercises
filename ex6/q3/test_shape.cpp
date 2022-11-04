@@ -35,10 +35,10 @@ int main(){
 
   std::cout<< pol1.get_name() << std::endl;
   std::cout<< "polygon1 are:"<<pol1.compute_area() <<std::endl;
-  std::cout<< "polygon2(clone):getname: "<<pol2.get_name()<< std::endl;
-  std::cout<< "polygon2(clone):area: " << pol2.compute_area()<<std::endl;
-  std::cout<< "polygon3(create):getname: "<<pol3.get_name()<< std::endl;
-  std::cout<< "polygon3(create):area: " << pol3.compute_area()<<std::endl;
+  std::cout<< "polygon2(clone):getname: "<<pol2->get_name()<< std::endl;
+  std::cout<< "polygon2(clone):area: " << pol2->compute_area()<<std::endl;
+  std::cout<< "polygon3(create):getname: "<<pol3->get_name()<< std::endl;
+  std::cout<< "polygon3(create):area: " << pol3->compute_area()<<std::endl;
 		       
 
   return 0;
