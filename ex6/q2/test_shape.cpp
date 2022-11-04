@@ -1,5 +1,5 @@
-#include "rectangle.cpp"
-#include "disk.cpp"
+#include "rectangle.h"
+#include "disk.h"
 
 struct Point{
   float x;
