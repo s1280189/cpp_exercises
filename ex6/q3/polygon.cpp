@@ -8,7 +8,7 @@ Polygon::Polygon(){
 Polygon::Polygon(Point* p1, int n1){
   n=n1;
   delete[] p;
-  p=new float[n];
+  p=new Point[n];
   for(int i=0;i<n;i++){
     p[i]=p1[i];
   }
