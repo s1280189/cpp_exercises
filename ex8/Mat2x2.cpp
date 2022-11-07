@@ -85,14 +85,11 @@ Mat2x2 operator- (const Mat2x2& a){
 }
 
 bool operator==(const Mat2x2& a, const Mat2x2& b){
-  Mat2x2& x;
-  x(0,0)=1e-6;
-  x(0,1)=1e-6;
-  x(1,0)=1e-6;
-  x(1,1)=1e-6;
-  if( (a-b)>x || (b-a)<x )return 0;
+  if( ((a(0,0)-b(0,0)>1e-6 && (a(0,1)-b(0,1)>1e-6) && (a(1,0)-b(1,0))>1e-6 && (a(1,1)-b(1,1)>1e-6))
+       || ((b(0,0)-a(0,0)>1e-6 && (b(0,1)-a(0,1)>1e-6) && (b(1,0)-a(1,0))>1e-6 && (b(1,1)-a(1,1)>1e-6)))
+       return false;
   else
-    return 1;
+    return true;
 }
 
 std::ostream& operator<<(std::ostream& os, Mat2x2& b){
