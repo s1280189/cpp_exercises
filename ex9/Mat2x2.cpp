@@ -3,15 +3,16 @@
 #include <cmath>
 #include <cctype>
 
-Mat2x2::Mat2x2(){
-  mat2x2[0][0]=1;
-  mat2x2[0][1]=0;
-  mat2x2[1][0]=0;
-  mat2x2[1][1]=1;
-  
+Mat2x2<T,N>::Mat2x2(){
+  for(int i=0;i<N; i++){
+	for(int j=0;j<N;j++){
+	if(i==j) e[i][j]=1;
+	else e[i][j]=0;
+	}
+  }  
 }
 
-Mat2x2::Mat2x2(float x[4]){
+Mat2x2<T,N>::Mat2x2(float x[4]){
   mat2x2[0][0]=x[0];
   mat2x2[0][1]=x[2];
   mat2x2[1][0]=x[1];
