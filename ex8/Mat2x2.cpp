@@ -98,7 +98,7 @@ bool operator==(const Mat2x2& a, const Mat2x2& b){
     return true;
 }
 
-std::ostream& operator<<(std::ostream& os, Mat2x2& b){
+std::ostream& operator<<(std::ostream& os, const Mat2x2& b){
  Mat2x2 c=b;
  std::ostringstream s;
  s << '(' << c(0,0) << ',' << c(0,1) << ','
