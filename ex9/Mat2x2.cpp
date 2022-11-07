@@ -85,20 +85,24 @@ Mat2x2 operator- (const Mat2x2& a){
 }
 
 bool operator==(const Mat2x2& a, const Mat2x2& b){
-  Mat2x2& x;
-  x(0,0)=1e-6;
-  x(0,1)=1e-6;
-  x(1,0)=1e-6;
-  x(1,1)=1e-6;
-  if( (a-b)>x || (b-a)<x )return 0;
-  else
-    return 1;
+  Mat2x2 c=a;
+  Mat2x2 d=b;
+  for(int i=0;i<2;i++){
+    for(int j=0;j<2;j++){
+      if(c(i,j)-d(i,j)>1e-6 || d(i,j)-c(i,j)>1e-6){
+       return false;
+      break;
+      }
+    }
+  }
+    return true;
 }
 
-std::ostream& operator<<(std::ostream& os, Mat2x2& b){
+std::ostream& operator<<(std::ostream& os, const Mat2x2& b){
+ Mat2x2 c=b;
  std::ostringstream s;
- s << '(' << b(0,0) << ',' << b(0,1) << ','
-   << b(1,0) << ',' << b(1,1) << ')';
+ s << '(' << c(0,0) << ',' << c(0,1) << ','
+   << c(1,0) << ',' << c(1,1) << ')';
 
   return os<<s.str();
 }
