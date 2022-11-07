@@ -5,7 +5,7 @@
 template<class T, int N>
 class Mat2x2{
   private:
-  T e[N];
+  T e[N][N];
 
  public:
 
