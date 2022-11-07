@@ -11,7 +11,7 @@ class Mat2x2{
 
   Mat2x2();
 
-  Mat2x2(float x[N]);
+  Mat2x2(T x[N][N]);
 
   Mat2x2& operator+= (const Mat2x2& b);
   Mat2x2& operator-= (const Mat2x2& b);
