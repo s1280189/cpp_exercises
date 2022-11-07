@@ -10,12 +10,12 @@ class Mat2x2{
 
   Mat2x2();
 
-  Mat2x2(float[] x);
+  Mat2x2(float x[4]);
 
   Mat2x2& operator+= (const Mat2x2& b);
   Mat2x2& operator-= (const Mat2x2& b);
   Mat2x2& operator*= (const Mat2x2& b);
-  float& operator[](int i, int j);
+  float& operator()(int i, int j);
 
 };
 
@@ -23,11 +23,11 @@ class Mat2x2{
 Mat2x2 operator+ (const Mat2x2& a, const Mat2x2& b);
 Mat2x2 operator-  (const Mat2x2& a, const Mat2x2& b);
 Mat2x2 operator*  (const Mat2x2& a, const Mat2x2& b);
-Mat2x2 operator- ();
+Mat2x2 operator- (const Mat2x2& a);
 
   
-bool operator==(const Mat2x2& b);
-ostream& operator<<(ostream& os, const Mat2x2& b);
+bool operator==(const Mat2x2& a,const Mat2x2& b);
+std::ostream& operator<<(std::ostream& os, const Mat2x2& b);
 
 
 
