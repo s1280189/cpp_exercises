@@ -4,7 +4,7 @@
 #include <cctype>
 
 int main(){
-  Mat2x2 m1;
+  Mat2x2<float, 2> m1;
   float m1d[2][2];
   m1d[0][0]=1;
   m1d[0][1]=0;
@@ -17,7 +17,7 @@ int main(){
 
 
   float x[4]={0,1,2,3};
-  Mat2x2 m2(x);
+  Mat2x2<float, 2> m2(x);
   if(m2(0,0)!=x[0] || m2(0,1)!=x[2] ||
      m2(1,0)!=x[1] || m2(1,1)!=x[3]){
     std::cout<<"Failed"<<std::endl;
@@ -26,10 +26,10 @@ int main(){
   float x1[4]={0,0,0,0};
   float x2[4]={1,2,3,4};
   float x3[4]={-1,-2,-3,-4};
-  Mat2x2 m3(x1);
-  Mat2x2 m4(x2);
-  Mat2x2 m5(x3);
-  Mat2x2 temp = m1;
+  Mat2x2<float,2> m3(x1);
+  Mat2x2<float,2> m4(x2);
+  Mat2x2<float,2> m5(x3);
+  Mat2x2<float,2> temp = m1;
   temp += m3;
   if(temp==m1)
     std::cout<<"op+= ->Success"<<std::endl;
