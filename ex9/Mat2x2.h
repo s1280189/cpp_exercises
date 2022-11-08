@@ -11,8 +11,9 @@ class Mat2x2{
 
   Mat2x2();
 
-  Mat2x2(T x[N][N]);
+  template<class T, int N> Mat2x2(T x[N]);
 
+  
   Mat2x2& operator+= (const Mat2x2& b);
   Mat2x2& operator-= (const Mat2x2& b);
   Mat2x2& operator*= (const Mat2x2& b);
@@ -22,12 +23,20 @@ class Mat2x2{
 
 template<class T, int N>
 Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b);
+
+template<class T,int N>
 Mat2x2<T,N> operator-  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b);
+
+template<class T, int N>
 Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b);
+
+template<class T, int N>
 Mat2x2<T,N> operator- (const Mat2x2<T,N>& a);
 
-  
+template<class T, int N>
 bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b);
+
+template<class T, int N>
 std::ostream& operator<<(std::ostream& os, const Mat2x2<T,N>& b);
 
 
