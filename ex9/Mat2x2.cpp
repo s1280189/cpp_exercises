@@ -12,7 +12,7 @@ Mat2x2<T,N>::Mat2x2(){
   }  
 }
 
-Mat2x2<T,N>::Mat2x2(T x[N][N]){
+Mat2x2<T,N>::Mat2x2(T x[2*N]){
   for(int i=0;i<N;i++){
 	for(int j=0;j<N;j++){
 		e[i][j]=x[i][j];
