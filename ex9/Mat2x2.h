@@ -11,7 +11,7 @@ class Mat2x2{
 
   Mat2x2();
 
-  template<class T, int N> Mat2x2(T x[N]);
+  template<class T, int N> Mat2x2(T x[2*N]);
 
   
   Mat2x2& operator+= (const Mat2x2& b);
