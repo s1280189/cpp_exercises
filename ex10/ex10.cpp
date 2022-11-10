@@ -8,28 +8,19 @@ std::stack<std::string> operation;
 
 double evaluate(const std::string& str){
   std::stringstream ss;
-  double outputOperand;
-  std::string outputOperation;
+  std::stringstream sss;
+  std::string output;
   std::string outputline;
 
   ss<<str;
   while(std::getline(ss,outputline)){
-    if(ss>>outputOperand){
-      operand.push(outputOprand);
-    }
+    ss>>output;
 
-    else if(ss>>outputOperation){
-      if(outputOperation == "+")
-	operation.push("+");
-      if(outputOperation=="-")
-	operation.push("-");
-      if(outputOperation=="*")
-	operation.push("*");
-      if(outputOperation=="/")
-	operation.push("/");
-
-      if(outputOperation == ")"){
-	
+    if(output == "+") operation.push("+");
+    if(output=="-") operation.push("-");
+    if(output=="*") operation.push("*");
+    if(output=="/") operation.push("/");
+    if(output== ")"){
 	double x,y;
 	x=operand.top();
 	operand.pop();
@@ -50,7 +41,13 @@ double evaluate(const std::string& str){
 	if(opration.top()=="/"){
 	  operand.push(y/x);
 	}
-      }
+    }
+
+    else{
+      double num;
+      sss<<output;
+      sss>>out;
+      operand.pop(out);
     }
   }
 
