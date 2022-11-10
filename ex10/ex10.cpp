@@ -53,6 +53,25 @@ double evaluate(const std::string& str){
 
   return oprand.top();
 }
+
+
+
+int main(){
+  double result;
+  std::string& str="( 1 + ( 2 + 3 ) )";
+  result = evaluate(str);
+  std::cout<<"result1:" << result <<std::endl;
+
+  str="( ( 2 - 3 ) * -2 / 4 ) ";
+  result= evaluate(str);
+  std::cout<<"result2:"<< result <<std::endl;
+
+  str="( ( 2 + 3 ) * 3 + 2 - ( 8 / 4 ) / 2 + 1 )";
+  result=evaluate(str);
+  std::cout<<"result3:" << result <<std::endl;
+
+  return 0;
+}
       
 
     
