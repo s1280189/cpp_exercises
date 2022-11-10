@@ -46,8 +46,8 @@ double evaluate(const std::string& str){
     else{
       double num;
       sss<<output;
-      sss>>out;
-      operand.pop(out);
+      sss>>num;
+      operand.pop(num);
     }
   }
 
