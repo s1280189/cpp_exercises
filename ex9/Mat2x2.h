@@ -33,10 +33,8 @@ Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b);
 template<class T, int N>
 Mat2x2<T,N> operator- (const Mat2x2<T,N>& a);
 
-template<class T, int N>
 bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b);
 
-template<class T, int N>
 std::ostream& operator<<(std::ostream& os, const Mat2x2<T,N>& b);
 
 
