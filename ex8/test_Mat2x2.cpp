@@ -45,7 +45,7 @@ int main(){
   if(temp==mm2)
     std::cout<<"op*= -> Success"<<std::endl;
 
-  if(m4(1,1)==4)
+  if(mm2(1,1)==4)
     std::cout<<"op()(float,float) ->Success"<<std::endl;
 
   if(-mm2 == mm3)
