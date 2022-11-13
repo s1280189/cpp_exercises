@@ -80,8 +80,13 @@ Mat2x2 operator*(const Mat2x2& a, const Mat2x2& b){
 }
       
 Mat2x2 operator- (const Mat2x2& a){
-
-  return -a;
+	Mat2x2 c;
+	for(int i=0;i<2;i++){
+		for(int j=0; j<2; j++){
+			c(i,j)= (-1) * a(i,j);
+		}
+	}
+  return c;
 }
 
 bool operator==(const Mat2x2& a, const Mat2x2& b){
