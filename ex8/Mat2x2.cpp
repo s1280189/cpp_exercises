@@ -96,7 +96,6 @@ bool operator==(const Mat2x2& a, const Mat2x2& b){
     for(int j=0;j<2;j++){
       if(c(i,j)-d(i,j)>1e-6 || d(i,j)-c(i,j)>1e-6){
        return false;
-      break;
       }
     }
   }
