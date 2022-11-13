@@ -1,6 +1,9 @@
 #include <iostream>
 #ifndef MAT2X2_H
 #define MAT2X2_H
+#include <sstream>
+#include <cmath>
+#include <cctype>
 
 template<class T, int N>
 class Mat2x2{
