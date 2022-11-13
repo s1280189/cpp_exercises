@@ -83,7 +83,7 @@ Mat2x2 operator- (const Mat2x2& a){
 	Mat2x2 c;
 	for(int i=0;i<2;i++){
 		for(int j=0; j<2; j++){
-			c(i,j)= (-1) * a(i,j);
+			c.mat2x2[i][j]= -a.mat2x2[i][j];
 		}
 	}
   return c;
