@@ -23,39 +23,40 @@ int main(){
     std::cout<<"Failed"<<std::endl;
   }
 
-  float x1[4]={0,0,0,0};
+  
   float x2[4]={1,2,3,4};
   float x3[4]={-1,-2,-3,-4};
-  Mat2x2<float,2> m3(x1);
-  Mat2x2<float,2> m4(x2);
-  Mat2x2<float,2> m5(x3);
+  float x4[4]={2,2,3,5}
+  Mat2x2<float,2> mm2(x2);
+  Mat2x2<float,2> mm3(x3);
+  Mat2x2<float,2> mm4(x4);
   Mat2x2<float,2> temp = m1;
-  temp += m3;
-  if(temp==m1)
+  temp += mm2;
+  if(temp==mm4)
     std::cout<<"op+= ->Success"<<std::endl;
   
 
-  temp -= m3;
+  temp -= mm2;
   if(temp==m1)
     std::cout<<"op-= ->Success"<<std::endl;
 
-  temp *= m4;
-  if(temp==m4)
+  temp *= mm2;
+  if(temp==mm2)
     std::cout<<"op*= -> Success"<<std::endl;
 
-  if(m4(1,1)==4)
+  if(mm2(1,1)==4)
     std::cout<<"op()(float,float) ->Success"<<std::endl;
 
-  if(-m4 == m5)
+  if(-mm2 == mm3)
     std::cout<<" op- -> Success"<<std::endl;
 
-  if((m3 + m4) == m4)
+  if((mm2 + m1) == mm4)
     std::cout<<" mat1 + mat2 -> Success"<<std::endl;
 
-  if((m3 - m4)== m5)
+  if((mm4 - m1)== mm2)
     std::cout<<" mat1-mat2 -> Success"<<std::endl;
 
-  if((m1 * m4)== m4)
+  if((m1 * mm2)== mm2)
     std::cout<<"mat1 * mat2 -> Success"<<std::endl;
 
   std::ostringstream os;
