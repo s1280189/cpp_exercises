@@ -10,8 +10,8 @@ namespace PL4 {
     BiDirlt j;
     BiDirlt temp;
 
-    for(i=begin;i<=end;i++){
-      for(j=begin++;j<=end;j++){
+    for(i=begin;i<end;i++){
+      for(j=begin++;j<end;j++){
 	if(i > j)
 	  {
 	    temp = i;

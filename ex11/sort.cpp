@@ -16,7 +16,7 @@ int main(){
   sort(t.cbegin(), t.cend());
 
   std::for_each(t.cbegin(), t.cend(), [](int x){
-    std::cout<<x<<" " ;
+    std::cout<<x<<" " ;  
   });
   
   return 0;
