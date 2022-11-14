@@ -62,11 +62,11 @@ int main(){
   result = evaluate(str);
   std::cout<<"result1:" << result <<std::endl;
 
-  str="( ( 2 - 3 ) * -2 / 4 ) ";
+  str="( 1 + ( 2 - 3 ) )";
   result= evaluate(str);
   std::cout<<"result2:"<< result <<std::endl;
 
-  str="( ( 2 + 3 ) * 3 + 2 - ( 8 / 4 ) / 2 + 1 )";
+  str="( 2 * ( 6 / 2 ) )";
   result=evaluate(str);
   std::cout<<"result3:" << result <<std::endl;
 
