@@ -45,6 +45,7 @@ class ArrayStack{
   explicit ArrayStack(int allocated_size)
   {
     _num_items = 0;
+   _allocated_size = allocated_size;
     _items = new std::string[allocated_size];
   }
 
