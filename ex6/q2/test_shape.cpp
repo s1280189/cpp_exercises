@@ -1,11 +1,6 @@
 #include "rectangle.h"
 #include "disk.h"
 
-struct Point{
-  float x;
-  float y;
-};
-
 
 int main(){
   Point p1;
