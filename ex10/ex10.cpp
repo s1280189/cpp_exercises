@@ -6,14 +6,15 @@
 std::stack<double> operand;
 std::stack<std::string> operation;
 
-double evaluate(const std::string& str){
+double evaluate(const std::string str){
   std::stringstream ss;
   std::stringstream sss;
   std::string output;
-  std::string outputline;
+  double x,y;
+  double num;
 
   ss<<str;
-  while(std::getline(ss,outputline)){
+  while(true){
     ss>>output;
 
     if(output == "+") operation.push("+");
@@ -21,11 +22,10 @@ double evaluate(const std::string& str){
     if(output=="*") operation.push("*");
     if(output=="/") operation.push("/");
     if(output== ")"){
-	double x,y;
 	x=operand.top();
 	operand.pop();
 	y=operand.top();
-	operand.pop()
+	operand.pop();
 	if(operation.top()=="+"){
 	  operand.push(y+x);
 	}
@@ -38,27 +38,29 @@ double evaluate(const std::string& str){
 	  operand.push(y*x);
 	}
 
-	if(opration.top()=="/"){
+	if(operation.top()=="/"){
 	  operand.push(y/x);
 	}
     }
+    
+    else if(output == "("){
+    }
 
     else{
-      double num;
       sss<<output;
       sss>>num;
-      operand.pop(num);
+      operand.push(num);
     }
   }
 
-  return oprand.top();
+  return operand.top();
 }
 
 
 
 int main(){
   double result;
-  std::string& str="( 1 + ( 2 + 3 ) )";
+  std::string str="( 1 + ( 2 + 3 ) )";
   result = evaluate(str);
   std::cout<<"result1:" << result <<std::endl;
 
@@ -72,7 +74,3 @@ int main(){
 
   return 0;
 }
-      
-
-    
-      
