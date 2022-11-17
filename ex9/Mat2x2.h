@@ -18,7 +18,8 @@ class Mat2x2{
         if(i==j) e[i][j]=1;
         else e[i][j]=0;
       }
-    };
+    }
+  };
 
   template<class T, int N> Mat2x2(T x[2*N]){
     for(int i=0;i<N;i++){
