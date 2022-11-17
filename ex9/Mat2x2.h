@@ -30,8 +30,8 @@ class Mat2x2{
 
   
   Mat2x2& operator+= (const Mat2x2& b){
-    for(int i=0;i<2;i++){
-      for(int j=0;j<2;j++){
+    for(int i=0;i<N;i++){
+      for(int j=0;j<N;j++){
         e[i][j]+=b.e[i][j];
       }
     }
@@ -39,8 +39,8 @@ class Mat2x2{
   };
     
   Mat2x2& operator-= (const Mat2x2& b){
-  for(int i=0;i<2;i++){
-    for(int j=0;j<2;j++){
+  for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
       e[i][j] -= b.e[i][j];
     }
   }
@@ -50,10 +50,10 @@ class Mat2x2{
     
   Mat2x2& operator*= (const Mat2x2& b){
   Mat2x2 a=*this;
-  for(int i=0;i<2;i++){
-    for(int j=0;j<2;j++){
+  for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
       e[i][j]=0;
-      for(int k=0;k<2;k++){
+      for(int k=0;k<N;k++){
 	e[i][j]+=a.e[i][k]*b.e[k][j];
       }
     }
@@ -65,10 +65,21 @@ class Mat2x2{
   float& operator()(int i, int j){
   return e[i][j];
 };
+	  
+Mat2x2& operator-  (const Mat2x2& a, const Mat2x2& b){
+  Mat2x2 c;
+  for(int i=0;i<N;i++){
+	  for(int j=0;j<N;j++){
+		  c.e[i][j]=a.e[i][j]-b.e[i][j];
+	  }
+  }	  
+
+  return c;
+};
 
 };
 
-template<class T, int N>
+	
 Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   Mat2x2<T,N> c;
   for(int i=0;i<N;i++){
@@ -80,19 +91,9 @@ Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   return c;
 };
 
-template<class T,int N>
-Mat2x2<T,N> operator-  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
-  Mat2x2<T,N> c;
-  for(int i=0;i<N;i++){
-	  for(int j=0;j<N;j++){
-		  c.e[i][j]=a.e[i][j]-b.e[i][j];
-	  }
-  }	  
 
-  return c;
-};
 
-template<class T, int N>
+
 Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   Mat2x2<T,N> c;
   for(int i=0;i<N;i++){
@@ -106,7 +107,6 @@ Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   return c;
 };
 
-template<class T, int N>
 Mat2x2<T,N> operator- (const Mat2x2<T,N>& a){
 	Mat2x2<T,N> c;
 	for(int i=0;i<N;i++){
