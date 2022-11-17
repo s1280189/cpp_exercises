@@ -3,11 +3,6 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-struct Point{
-  float x;
-  float y;
-};
-
 
 class Rectangle : public Shape{
  private:
