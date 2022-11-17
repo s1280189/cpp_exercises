@@ -63,8 +63,6 @@ class ArrayStack{
     _items = new std::string[op2._allocated_size];
     _num_items = op2._num_items;
     _allocated_size = op2._allocated_size;
-    *_items = *op2._items;
-
     for(int i=0;i<op2._allocated_size;i++){
       _items[i]=op2._items[i];
     }
