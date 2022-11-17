@@ -37,8 +37,8 @@ int main(){
   Disk disk1(p1, 5);
   Disk* disk2;
   Disk* disk3;
-  disk2=disk1.clone;
-  disk3=disk1.create;
+  disk2=disk1.clone();
+  disk3=disk1.create();
   
 
   std::cout<< disk1.get_name() << std::endl;
