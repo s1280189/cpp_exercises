@@ -4,7 +4,7 @@
 
 using namespace PL4;
 int main(){
-  std::list<int>::iterator t;
+  std::list<int> t;
 
   t.push_back(1);
   t.push_back(5);
@@ -13,7 +13,7 @@ int main(){
   t.push_back(9);
   t.push_back(6);
 
-  sort(t.cbegin(), t.cend());
+  sort(t.begin(), t.end());
 
   std::for_each(t.cbegin(), t.cend(), [](int x){
     std::cout<<x<<" " ;  
