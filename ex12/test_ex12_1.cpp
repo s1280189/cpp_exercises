@@ -11,7 +11,7 @@ int main(){
   ls.push_front(p3);
   ls.push_front(p1);
   ls.push_front(p4);
-  ls.push-front(p2);
+  ls.push_front(p2);
 
   ls = find_k_closet(k, ls);
 
