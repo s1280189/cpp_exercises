@@ -14,7 +14,7 @@ namespace PL4 {
 	  for(i=begin;i<end;i++){
 		  j=i;
 		  while((j > 0) && (j-1) >  j){
-			  swap(j-1, j);
+			  swap((j-1), j);
 			  j--;
 		  } 
 	  
