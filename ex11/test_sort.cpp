@@ -13,7 +13,7 @@ int main(){
   t.push_back(9);
   t.push_back(6);
 
-  sort(t.begin(), t.end());
+  PL4::sort(t.begin(), t.end());
 
   std::for_each(t.cbegin(), t.cend(), [](int x){
     std::cout<<x<<" " ;  
