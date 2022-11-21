@@ -11,9 +11,10 @@ namespace PL4 {
 	  
 	  i=begin;
 	  while(i != end){
-		  j=i;
+		  j=*i;
 		  x=j--;
-		  while((j != 0) && j >  x){
+		  while(j != 0 && j > x ){
+			  
 			  swap(j, x);
 			  j--;
 			  x--;
