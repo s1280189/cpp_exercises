@@ -36,7 +36,7 @@ std::list<Point> find_k_closest(int k, std::list<Point> point){
     Compare
     > queue;
   
-  std::ls<Point> ls;
+  std::list<Point> ls;
 
   while(!point.empty()){
     queue.push(point.front());
@@ -45,12 +45,12 @@ std::list<Point> find_k_closest(int k, std::list<Point> point){
 
 
   while(!queue.empty()){
-	  ls.push_front(queue.top());
-	  queue.pop();
+    ls.push_front(queue.top());
+    queue.pop();
   }
 
   for(int i=0;i<ls.size()-(k-1);i++){
-	  ls.pop_back();
+    ls.pop_back();
   }
   
   return ls;

@@ -15,10 +15,11 @@ int main(){
 
   ls = find_k_closest_lambda(k, ls);
 
-  for(auto i=ls.begin(); i!=ls.end(); i++){
+ for(auto i=ls.begin(); i!=ls.end(); i++){
     Point a=*i;
     std::cout<< a.x <<"," << a.y<<"," <<a.z << std::endl;
   }
+
 
   return 0;
 }
