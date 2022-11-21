@@ -1,5 +1,5 @@
 #ifndef EX12_2_H
-#define Ex12_2_H
+#define EX12_2_H
 #include<iostream>
 #include<sstream>
 #include<cmath>
@@ -20,7 +20,7 @@ auto compare[](const Point fir, const Point sec){
     else
       return false;
 }
-}
+};
 
 
 
