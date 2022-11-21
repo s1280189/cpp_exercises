@@ -6,6 +6,7 @@
 #include<list>
 #include<queue>
 #include<algorithm>
+#include<iterator>
 
 struct Point{
 Point(): x(0.0), y(0.0), z(0.0) {}
