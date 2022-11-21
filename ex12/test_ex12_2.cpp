@@ -1,4 +1,4 @@
-#include "ex12_1.h"
+#include "ex12_2.h"
 
 int main(){
   std::list<Point> ls;
@@ -13,7 +13,7 @@ int main(){
   ls.push_front(p4);
   ls.push_front(p2);
 
-  ls = find_k_closet(k, ls);
+  ls = find_k_closest_lambda(k, ls);
 
   std::for_each(ls.cbegin(), ls.cend(), [](Point p)){
     std::cout << "x= " << p.x
