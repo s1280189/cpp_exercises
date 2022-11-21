@@ -10,7 +10,8 @@ namespace PL4 {
     BiDirlt i,j,x;
     BiDirlt temp;
 	  
-	  for(i=begin;i<end;i++){
+	  i=begin;
+	  while(i != end){
 		  j=i;
 		  x=j--;
 		  while((j > 0) && j >  x){
@@ -18,7 +19,7 @@ namespace PL4 {
 			  j--;
 			  x--;
 		  } 
-	  
+	  i++;
   };
 };
 }
