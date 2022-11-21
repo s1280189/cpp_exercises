@@ -1,5 +1,5 @@
 #ifndef EX12_1_H
-#define Ex12_1_H
+#define EX12_1_H
 #include<iostream>
 #include<sstream>
 #include<cmath>
@@ -22,7 +22,7 @@ class Compare {
     else
       return false;
   }
-}
+};
 
 
 
