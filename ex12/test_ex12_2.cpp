@@ -15,10 +15,9 @@ int main(){
 
   ls = find_k_closest_lambda(k, ls);
 
-  std::for_each(ls.cbegin(), ls.cend(), [](Point p)){
-    std::cout << "x= " << p.x
-	      << "|y= " << p.y
-	      << "|z= " << p.z << " |" << std::endl;
+  for(auto i=ls.begin(); i!=ls.end(); i++){
+    Point a=*i;
+    std::cout<< a.x <<"," << a.y<<"," <<a.z << std::endl;
   }
 
   return 0;
