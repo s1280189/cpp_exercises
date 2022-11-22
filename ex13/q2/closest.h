@@ -13,8 +13,8 @@ std::vector<float> compute_k_closest(int k, std::vector<float>& v){
 
   int i=1;
 
-  while(i < std::distance(v.bigin()+i, max)){
-   std::nth_element(v.begin(), v.begin()+i, v.end(), std::greater{});
+   while(i <= std::distance(v.begin()+i, max)+1){
+   std::nth_element(v.begin(), v.begin()+i, v.end(), std::greater<float>{});
    result.push_back(*(v.begin()+i));
    i++;
  }
