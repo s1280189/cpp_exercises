@@ -11,14 +11,13 @@ std::vector<float> compute_k_closest(int k, std::vector<float>& v){
   
   std::vector<float>::iterator max = std::max_element(v.begin(), v.end());
 
- for(i=1;i<=k;i++){
-   std::nth_element(v.begin(), v.begin()+i, v.end());
-   
+  int i=1;
+
+  while(i < std::distance(v.bigin()+i, max)){
+   std::nth_element(v.begin(), v.begin()+i, v.end(), std::greater{});
+   result.push_back(*(v.begin()+i));
+   i++;
  }
-  
-  for(i=1;i<=k;i++){
-    result.push_back(*(v.begin() + i));
-  }
   
   return result;
 
