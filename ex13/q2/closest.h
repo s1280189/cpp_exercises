@@ -23,3 +23,5 @@ std::vector<float> compute_k_closest(int k, std::vector<float>& v){
 
 
 }
+
+#endif
