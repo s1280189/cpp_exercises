@@ -67,14 +67,13 @@ class Mat2x2{
   return e[i][j];
 };
 	  
-Mat2x2& operator-  (const Mat2x2& a, const Mat2x2& b){
-  Mat2x2 c;
-  for(int i=0;i<N;i++){
-	  for(int j=0;j<N;j++){
-		  c.e[i][j]=a.e[i][j]-b.e[i][j];
-	  }
-  }	  
-
+Mat2x2<T,N> operator- (const Mat2x2<T,N>& a){
+	Mat2x2<T,N> c;
+	for(int i=0;i<N;i++){
+		for(int j=0;j<N;j++){
+			c.e[i][j]= - a.e[i][j];
+		}
+	}
   return c;
 };
 
@@ -108,15 +107,18 @@ Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   return c;
 };
 
-Mat2x2<T,N> operator- (const Mat2x2<T,N>& a){
-	Mat2x2<T,N> c;
-	for(int i=0;i<N;i++){
-		for(int j=0;j<N;j++){
-			c.e[i][j]= - a.e[i][j];
-		}
-	}
+Mat2x2& operator-  (const Mat2x2& a, const Mat2x2& b){
+  Mat2x2 c;
+  for(int i=0;i<N;i++){
+	  for(int j=0;j<N;j++){
+		  c.e[i][j]=a.e[i][j]-b.e[i][j];
+	  }
+  }	  
+
   return c;
 };
+
+
 
 bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b){
   Mat2x2<T,N> c=a;
