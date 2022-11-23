@@ -24,11 +24,15 @@ int main(){
   
   float x2[4]={1,2,3,4};
   float x3[4]={-1,-2,-3,-4};
-  float x4[4]={2,2,3,5}
+  float x4[4]={2,2,3,5};
+  float x5[4]={2, 2, 3, 3};
   Mat2x2<float,2> mm2(x2);
   Mat2x2<float,2> mm3(x3);
   Mat2x2<float,2> mm4(x4);
+  Mat2x2<float, 2> mm5(x5);
+  Mat2x2<float, 2> mm6(x5);
   Mat2x2<float,2> temp = m1;
+  Mat2x2<float,2>temp2 = m1;
   temp += mm2;
   if(temp==mm4)
     std::cout<<"op+= ->Success"<<std::endl;
@@ -45,7 +49,7 @@ int main(){
   if(mm2(1,1)==4)
     std::cout<<"op()(float,float) ->Success"<<std::endl;
 
-  if(-mm2 == mm3)
+  if( -mm2 == mm3 )
     std::cout<<" op- -> Success"<<std::endl;
 
   if((mm2 + m1) == mm4)
@@ -54,7 +58,7 @@ int main(){
   if((mm4 - m1)== mm2)
     std::cout<<" mat1-mat2 -> Success"<<std::endl;
 
-  if((m1 * mm2)== mm2)
+  if((temp2 * mm5)== mm6)
     std::cout<<"mat1 * mat2 -> Success"<<std::endl;
 
   std::ostringstream os;
