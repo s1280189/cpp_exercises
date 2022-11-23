@@ -43,6 +43,6 @@ void Stack::pop() {
     std::cerr << "stack is empty!"<<std::endl;
 }
 
-Point Stack::top(){
+Point Stack::top() const{
   return _data[_top];
 }
