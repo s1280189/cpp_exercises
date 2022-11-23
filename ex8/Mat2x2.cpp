@@ -79,11 +79,11 @@ Mat2x2 operator*(const Mat2x2& a, const Mat2x2& b){
   return c;
 }
       
-Mat2x2& operator- (const Mat2x2& a){
+Mat2x2 operator- (Mat2x2& a){
 	Mat2x2 c;
 	for(int i=0;i<2;i++){
 		for(int j=0; j<2; j++){
-			c.mat2x2[i][j]= -a.mat2x2[i][j];
+			c(i, j)= -a(i, j);
 		}
 	}
   return c;
