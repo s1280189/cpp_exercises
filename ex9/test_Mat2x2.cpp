@@ -1,7 +1,5 @@
 #include "Mat2x2.h"
-#include <sstream>
-#include <cmath>
-#include <cctype>
+
 
 int main(){
   Mat2x2<float, 2> m1;
