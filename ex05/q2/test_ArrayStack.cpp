@@ -42,12 +42,6 @@ int main(){
     stack2.pop();
   }
 
-   stack6.push(1);
-   stack6.push(2);
-   stack6.push(3);
-   stack6.push(4);
-   stack6.push(5);
-
 
   return 0;
 }
