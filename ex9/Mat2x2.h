@@ -7,11 +7,10 @@
 
 template<class T, int N>
 class Mat2x2{
-  private:
-  T e[N][N];
 
  public:
-
+ 
+ T e[N][N];
   Mat2x2(){
     for(int i=0;i<N; i++){
       for(int j=0;j<N;j++){
@@ -20,11 +19,11 @@ class Mat2x2{
       }
     }
   };
-
-  template<class T, int N> Mat2x2(T x[2*N]){
+  
+  Mat2x2(T x[2*N]){
     for(int i=0;i<N;i++){
       for(int j=0;j<N;j++){
-        e[i][j]=x[i+j*n];
+        e[i][j]=x[i+j*N];
       }
     }
   };
@@ -66,21 +65,23 @@ class Mat2x2{
   float& operator()(int i, int j){
   return e[i][j];
 };
-	  
-Mat2x2<T,N> operator- (const Mat2x2<T,N>& a){
+
+
+
+};
+
+
+template<class T, int N> Mat2x2<T, N> operator- (Mat2x2<T, N>& a){
 	Mat2x2<T,N> c;
 	for(int i=0;i<N;i++){
 		for(int j=0;j<N;j++){
-			c.e[i][j]= - a.e[i][j];
+			c(i, j)= - a(i, j);
 		}
 	}
   return c;
-};
-
-};
-
+};	  
 	
-Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
+template<class T, int N>Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   Mat2x2<T,N> c;
   for(int i=0;i<N;i++){
 	for(int j=0;j<N;j++){
@@ -94,21 +95,21 @@ Mat2x2<T,N> operator+ (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
 
 
 
-Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
+template<class T, int N>Mat2x2<T,N> operator*  (const Mat2x2<T,N>& a, const Mat2x2<T,N>& b){
   Mat2x2<T,N> c;
   for(int i=0;i<N;i++){
 	  for(int j=0;j<N;j++){
 		  c.e[i][j]=0;
 		  for(int k=0;k<N;k++){
-			  c.e[i][j]=c.e[i][j]+a.e[i][k] * b.e[k][i];
+			  c.e[i][j]=c.e[i][j]+a.e[k][j] * b.e[i][k];
 		  }
 	  }
   }
   return c;
 };
 
-Mat2x2& operator-  (const Mat2x2& a, const Mat2x2& b){
-  Mat2x2 c;
+template<class T, int N> Mat2x2<T, N> operator-  (const Mat2x2<T, N>& a, const Mat2x2<T, N>& b){
+  Mat2x2<T, N> c;
   for(int i=0;i<N;i++){
 	  for(int j=0;j<N;j++){
 		  c.e[i][j]=a.e[i][j]-b.e[i][j];
@@ -118,9 +119,7 @@ Mat2x2& operator-  (const Mat2x2& a, const Mat2x2& b){
   return c;
 };
 
-
-
-bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b){
+template<class T, int N>bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b){
   Mat2x2<T,N> c=a;
   Mat2x2<T,N> d=b;
   for(int i=0;i<2;i++){
@@ -135,7 +134,7 @@ bool operator==(const Mat2x2<T,N>& a,const Mat2x2<T,N>& b){
 };
 
   
-std::ostream& operator<<(std::ostream& os, const Mat2x2<T,N>& b){
+template<class T, int N> std::ostream& operator<<(std::ostream& os, const Mat2x2<T,N>& b){
  Mat2x2<T,N> c=b;
  std::ostringstream s;
  s << '(' << c(0,0) << ',' << c(0,1) << ','
@@ -143,8 +142,5 @@ std::ostream& operator<<(std::ostream& os, const Mat2x2<T,N>& b){
 
   return os<<s.str();
 };
-
-
-
 
 #endif
