@@ -16,11 +16,11 @@ class Mat2x2{
   Mat2x2& operator-= (const Mat2x2& b);
   Mat2x2& operator*= (const Mat2x2& b);
   float& operator()(int i, int j);
-  Mat2x2& operator- (const Mat2x2& a);
 
 
 };
 
+ Mat2x2 operator- (const Mat2x2& a);
 
 Mat2x2 operator+ (const Mat2x2& a, const Mat2x2& b);
 Mat2x2 operator-  (const Mat2x2& a, const Mat2x2& b);
