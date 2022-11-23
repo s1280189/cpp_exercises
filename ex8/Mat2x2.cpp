@@ -45,7 +45,7 @@ Mat2x2& Mat2x2::operator*= (const Mat2x2& b){
     for(int j=0;j<2;j++){
       mat2x2[i][j]=0;
       for(int k=0;k<2;k++){
-	mat2x2[i][j]+=a.mat2x2[i][k]*b.mat2x2[k][j];
+	mat2x2[i][j]+=a.mat2x2[k][j]*b.mat2x2[i][k];
       }
     }
   }
