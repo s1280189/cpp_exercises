@@ -28,7 +28,7 @@ class Stack {
 
   void pop();
 
-  Point top() const { return _data[_top];};
+  Point top() const;
 
  private:
   int _max_size;
