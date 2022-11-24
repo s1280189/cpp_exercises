@@ -1,15 +1,11 @@
 
 #include "polygon.h"
 
-struct Point{
-  float x;
-  float y;
-};
 
 
 int main(){
   int n=5;
-  Polygon p1[5];
+  Point p1[5];
   p1[0].x=1;
   p1[0].y=1;
 
