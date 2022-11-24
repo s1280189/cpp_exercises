@@ -6,9 +6,10 @@ int main(){
   std::vector<float> vr=compute_k_closest(3, v1);
   
   for(int i=0; i<vr.size(); i++){
-    std::cout<< vr[i] <<" " <<std::endl;
+    std::cout<< vr[i] <<"    ";
   }
-    
+ 
+  std::cout<<std::endl;
 
   return 0;
 }
