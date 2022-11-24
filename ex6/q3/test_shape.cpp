@@ -1,5 +1,4 @@
-#include "rectangle.h"
-#include "disk.h"
+
 #include "polygon.h"
 
 struct Point{
