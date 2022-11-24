@@ -21,7 +21,7 @@ int main(){
   p1[4].x=5;
   p1[4].y=5;
   
-  Polygon po1(p1, 5);
+  Polygon pol1(p1, 5);
   Polygon* pol2;
   Polygon* pol3;
 
