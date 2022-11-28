@@ -14,6 +14,10 @@ Polygon::Polygon(Point* p1, int n1){
   }
     
 }
+Polygon::Polygon(const Polygon& pol1){
+  n=pol1.n;
+  p=pol.p;
+}
 
 std::string Polygon::get_name() const{
   return "Polygon";
