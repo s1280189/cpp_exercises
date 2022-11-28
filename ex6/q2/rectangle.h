@@ -16,6 +16,7 @@ class Rectangle : public Shape{
   Rectangle();
 
   Rectangle(Point p1, float p1_width, float p1_height);
+ Rectangle(const Rectangle& rec1);
 
   virtual std::string get_name() const;
 
