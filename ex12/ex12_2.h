@@ -39,14 +39,11 @@ std::list<Point> find_k_closest_lambda(int k, std::list<Point> point){
   }
 
 
-  while(!queue.empty()){
+  for(int i=0;i<k;i++){
 	  ls.push_front(queue.top());
 	  queue.pop();
   }
 
-  for(int i=0;i<ls.size()-(k-1);i++){
-	  ls.pop_back();
-  }
   
   return ls;
 }
