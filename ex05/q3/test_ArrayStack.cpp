@@ -21,12 +21,7 @@ int main(){
   ArrayStack stack6(10);
   stack6=stack6;
 
-   stack6.push(1);
-   stack6.push(2);
-   stack6.push(3);
-   stack6.push(4);
-   stack6.push(5);
-
+   
    ArrayStack stack7 = std::move(stack5);
 
     stack6 = std::move(stack2);
@@ -43,7 +38,7 @@ int main(){
 
     
 
-    max=stack6.size;
+    max=stack6.size();
     for(int i=0;i<=max;i++){
       std::cout<<"stack6 =:"<< stack6.top()<<std::endl;
       std::cout<<"stack2 =:"<< stack2.top()<<std::endl;
