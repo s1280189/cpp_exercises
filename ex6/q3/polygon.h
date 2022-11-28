@@ -13,6 +13,7 @@ class Polygon: public Shape{
  public:
   Polygon();
   Polygon(Point* p, int n);
+ Polygon(const Polygon& pol1);
 
   virtual std::string get_name() const;
   virtual float compute_area() const;
