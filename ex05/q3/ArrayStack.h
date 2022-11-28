@@ -86,7 +86,7 @@ class ArrayStack{
   
   //Move assignement
   ArrayStack& operator=(ArrayStack&& o){
-    delete[] items;
+    delete[] _items;
     _items = new std::string[o._allocated_size];
     _num_items= o._num_items;
     _allocated_size = o._allocated_size;
