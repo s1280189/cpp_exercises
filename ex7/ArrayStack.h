@@ -5,8 +5,8 @@
 #include<iostream>
 #include<stdexcept>
 
-class Exception: public std::runtime_error{
- public: Exception() :  std::runtime_error("error:Stack is empty"){};
+class Stack_empty: public std::runtime_error{
+ public: Stack_empty() :  std::runtime_error("error:Stack is empty"){};
 };
 
 class ArrayStack{
@@ -118,14 +118,14 @@ class ArrayStack{
 
   //Pop item
   void pop(){
-    if(_num_items==0) throw Exception();
+    if(empty()) throw Stack_empty();
     _num_items--;
     if(_num_items>0 && _num_items==_allocated_size/4) resize(_allocated_size/2);
   }
 
   //Access the top-most item
   std::string top(){
-    if(_num_items==0) throw Exception();
+    if(empty()) throw Stack_empty();
     return _items[_num_items-1];
   }
 
