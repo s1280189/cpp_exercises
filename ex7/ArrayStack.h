@@ -45,13 +45,69 @@ class ArrayStack{
   explicit ArrayStack(int allocated_size)
   {
     _num_items = 0;
-   _allocated_size = allocated_size;
+    _allocated_size=allocated_size;
     _items = new std::string[allocated_size];
   }
 
+
+  ArrayStack(const ArrayStack& another_stack){
+    delete[] _items;
+    _items = new std::string[another_stack._allocated_size];
+    
+    _num_items = another_stack._num_items;
+    _allocated_size = another_stack._allocated_size;
+    
+    for(int i=0;i<another_stack._allocated_size; i++){
+      _items[i]= another_stack._items[i];
+    }
+  }
+
+  ArrayStack& operator=(const ArrayStack& op2){
+    delete[] _items;
+    _items = new std::string[op2._allocated_size];
+    _num_items = op2._num_items;
+    _allocated_size = op2._allocated_size;
+
+    for(int i=0;i<op2._allocated_size;i++){
+      _items[i]=op2._items[i];
+    }
+
+    return *this;
+  }
+
+  //Move Constructor
+ 
+ ArrayStack(ArrayStack&& o) : _items(nullptr), _num_items(0), _allocated_size(0){
+    _items=o._items;
+    _num_items=o._num_items;
+    _allocated_size=o._allocated_size;
+    
+    o._items = nullptr;
+    o._num_items=0;
+    o._allocated_size=0;
+    
+  }
+
+  
+  //Move assignement
+  ArrayStack& operator=(ArrayStack&& o){
+   if(this != &o){
+       delete[] _items;
+       _items=o._items;
+    _num_items=o._num_items;
+    _allocated_size=o._allocated_size;
+    
+    o._items = nullptr;
+    o._num_items=0;
+    o._allocated_size=0;
+   }
+   return *this;
+  }
+
+    
   //Destructor:
   ~ArrayStack(){
-    delete[] _items;
+    delete _items;
   }
 
   //Push item to the stack
